@@ -6,10 +6,17 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
+    docile (1.1.5)
+    json (2.1.0)
     minitest (5.10.3)
     minitest-utils (0.4.0)
       minitest
     rake (12.2.1)
+    simplecov (0.15.1)
+      docile (~> 1.1.0)
+      json (>= 1.8, < 3)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.2)
 
 PLATFORMS
   ruby
@@ -19,6 +26,7 @@ DEPENDENCIES
   bundler
   minitest-utils
   rake
+  simplecov
 
 BUNDLED WITH
    1.16.0

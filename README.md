@@ -1,8 +1,10 @@
 # Boppers
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/boppers`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+[![Travis-CI](https://travis-ci.org/fnando/boppers.png)](https://travis-ci.org/fnando/boppers)
+[![Maintainability](https://api.codeclimate.com/v1/badges/f2492f5c88e0a2e7041e/maintainability)](https://codeclimate.com/github/fnando/boppers/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/f2492f5c88e0a2e7041e/test_coverage)](https://codeclimate.com/github/fnando/boppers/test_coverage)
+[![Gem](https://img.shields.io/gem/v/boppers.svg)](https://rubygems.org/gems/boppers)
+[![Gem](https://img.shields.io/gem/dt/boppers.svg)](https://rubygems.org/gems/boppers)
 
 ## Installation
 
