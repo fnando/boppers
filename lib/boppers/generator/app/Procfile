@@ -1,0 +1,1 @@
+worker: bundle exec boppers start --require config/boppers.rb

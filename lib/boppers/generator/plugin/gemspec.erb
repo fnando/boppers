@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-require "./lib/boppers/version"
+require "./lib/boppers/<%= name %>/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "boppers"
-  spec.version       = Boppers::VERSION
-  spec.authors       = ["Nando Vieira"]
-  spec.email         = ["fnando.vieira@gmail.com"]
+  spec.name          = "<%= plugin_name %>"
+  spec.version       = Boppers::<%= plugin_namespace %>::VERSION
+  spec.authors       = ["Author"]
+  spec.email         = ["author@example.com"]
 
-  spec.summary       = "A simple bot framework for individuals."
+  spec.summary       = "Some description"
   spec.description   = spec.summary
-  spec.homepage      = "https://rubygems.org/gems/boppers"
+  spec.homepage      = "https://rubygems.org/gems/<%= plugin_name %>"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
@@ -20,15 +20,10 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) {|f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "thor"
-  spec.add_dependency "aitch"
+  spec.add_dependency "boppers"
 
   spec.add_development_dependency "bundler"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "minitest-utils"
   spec.add_development_dependency "simplecov"
-  spec.add_development_dependency "pry-meta"
-  spec.add_development_dependency "mail"
-  spec.add_development_dependency "telegram_bot"
-  spec.add_development_dependency "twitter"
 end

@@ -1,0 +1,8 @@
+{
+  "name": "Boppers",
+  "description": "A simple bot framework for individuals.",
+  "repository": "https://github.com/fnando/boppers",
+  "logo": "https://dl.dropboxusercontent.com/u/1540890/uptime_checker/icon.svg",
+  "keywords": ["ruby", "bots"],
+  "addons": []
+}

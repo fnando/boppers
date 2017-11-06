@@ -1,0 +1,9 @@
+# frozen_string_literal: true
+
+require "test_helper"
+
+class Boppers<%= plugin_namespace %>Test < Minitest::Test
+  test "check version" do
+    assert_equal "0.1.0", Boppers::<%= plugin_namespace %>::VERSION
+  end
+end
