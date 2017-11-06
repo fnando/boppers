@@ -1,0 +1,24 @@
+PATH
+  remote: .
+  specs:
+    boppers (0.0.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    minitest (5.10.3)
+    minitest-utils (0.4.0)
+      minitest
+    rake (12.2.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  boppers!
+  bundler
+  minitest-utils
+  rake
+
+BUNDLED WITH
+   1.16.0
