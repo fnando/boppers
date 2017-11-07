@@ -8,6 +8,8 @@ module Boppers
         red: "\e[31m"
       }.freeze
 
+      NO_COLOR = "\e[0m"
+
       attr_reader :subscribe
 
       def initialize(subscribe: nil)
@@ -15,12 +17,17 @@ module Boppers
       end
 
       def call(title, message, options)
-        color = COLORS.fetch(options[:color], "\e[0m")
+        color = COLORS.fetch(options[:color], NO_COLOR)
+        message = message
+                  .gsub(/^/m, "   ")
+                  .lines
+                  .map {|line| "#{color}#{line}#{NO_COLOR}" }
+                  .join
 
         puts [
-          "#{color}## #{title}",
-          message.gsub(/^/m, "   "),
-          "\e[0m\n"
+          "#{color}## #{title}#{NO_COLOR}",
+          message,
+          "\n"
         ].join("\n")
       end
     end

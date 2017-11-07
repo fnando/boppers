@@ -37,7 +37,9 @@ module Boppers
                       [name]
                     end
     subscriptions = subscriptions.flatten.compact.map(&:to_sym)
-
+p name
+p notifier
+p subscriptions
     subscriptions.include?(name)
   end
 end
