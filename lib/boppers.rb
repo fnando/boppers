@@ -31,9 +31,12 @@ module Boppers
   end
 
   def self.subscribed?(notifier, name)
-    subscriptions = [notifier.subscribe] if notifier.respond_to?(:subscribe)
-    subscriptions ||= [name]
-    subscriptions = subscriptions.flatten.map(&:to_sym)
+    subscriptions = if notifier.respond_to?(:subscribe)
+                      [notifier.subscribe || name]
+                    else
+                      [name]
+                    end
+    subscriptions = subscriptions.flatten.compact.map(&:to_sym)
 
     subscriptions.include?(name)
   end
