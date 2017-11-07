@@ -3,6 +3,11 @@
 module Boppers
   module Notifier
     class Slack
+      COLORS = {
+        green: "good",
+        red: "danger"
+      }.freeze
+
       attr_reader :api_token, :channel, :subscribe
 
       def initialize(api_token:, channel:, subscribe: nil)
@@ -22,7 +27,7 @@ module Boppers
                 fallback: message,
                 title: subject,
                 text: message,
-                color: options[:color]
+                color: COLORS.fetch(options[:color])
               }
             ]
           )
