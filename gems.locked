@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    boppers (0.0.2)
+    boppers (0.0.3)
       aitch
       thor
 
