@@ -15,6 +15,8 @@ module Boppers
         copy_file "gems.rb"
         copy_file "Procfile"
         copy_file "config/boppers.rb"
+        copy_file ".gitgnore"
+        copy_file ".env"
       end
 
       def run_commands
