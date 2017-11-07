@@ -276,6 +276,12 @@ If you're going to send e-mail notification, you'll need Sendgrid.
 heroku addons:create sendgrid:starter
 ```
 
+You also need to set the buildpack:
+
+```
+heroku buildpacks:set heroku/ruby
+```
+
 Make a commit and deploy to your Heroku account.
 
 ```
