@@ -1,0 +1,19 @@
+# frozen_string_literal: true
+
+require "boppers/notifier/<%= name %>/version"
+
+module Boppers
+  module Notifier
+    class <%= plugin_namespace %>
+      attr_reader :subscribe
+
+      def initialize(subscribe: nil)
+        @subscribe = subscribe
+      end
+
+      def call(title, message, options)
+        puts "<%= name %> notification"
+      end
+    end
+  end
+end

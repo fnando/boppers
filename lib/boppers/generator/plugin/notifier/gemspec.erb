@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-require "./lib/boppers/<%= name %>/version"
+require "./lib/boppers/notifier/<%= name %>/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "<%= plugin_name %>"
-  spec.version       = Boppers::<%= plugin_namespace %>::VERSION
+  spec.version       = Boppers::Notifier::<%= plugin_namespace %>::VERSION
   spec.authors       = ["Author"]
   spec.email         = ["author@example.com"]
 
-  spec.summary       = "Some description"
+  spec.summary       = "A bopper notifier to [SOME DESCRIPTION]"
   spec.description   = spec.summary
   spec.homepage      = "https://rubygems.org/gems/<%= plugin_name %>"
   spec.license       = "MIT"

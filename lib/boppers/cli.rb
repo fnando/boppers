@@ -28,14 +28,26 @@ module Boppers
     end
 
     desc "plugin NAME", "Create a new plugin for Boppers"
+    method_option :type,
+                  type: :string,
+                  desc: "The type of plugin. Can be either bopper or notifier.",
+                  required: true
 
     def plugin(name)
       require "boppers/generator/plugin"
 
+      unless %w{bopper notifier}.include?(options[:type])
+        message = "ERROR: --type needs to be either 'bopper' or 'notifier'"
+        shell.error shell.set_color(message, :red)
+        exit 1
+      end
+
+      suffix = "-notifier" if options[:type] == "notifier"
       base_path = File.dirname(File.expand_path(name))
-      base_name = "boppers-#{File.basename(name)}"
+      base_name = "boppers-#{File.basename(name)}#{suffix}"
 
       generator = Generator::Plugin.new
+      generator.plugin_type = options[:type]
       generator.destination_root = File.join(base_path, base_name)
       generator.invoke_all
     end

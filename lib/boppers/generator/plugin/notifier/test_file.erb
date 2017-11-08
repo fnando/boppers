@@ -1,0 +1,10 @@
+# frozen_string_literal: true
+
+require "test_helper"
+
+class BoppersNotifier<%= plugin_namespace %>Test < Minitest::Test
+  test "lints plugin" do
+    bopper = Boppers::Notifier::<%= plugin_namespace %>.new
+    Boppers::Testing::NotifierLinter.call(bopper)
+  end
+end

@@ -65,7 +65,7 @@ The `Boppers.notify` method expects a event name (the recommended value is the b
 I encourage you to share your boppers. I even added a command to generate a common structure, so you don't have to think about how to organize it. Let's say you want to distribute the clock bopper above.
 
 ```
-$ boppers plugin clock
+$ boppers plugin clock --type bopper
       create  boppers-clock.gemspec
       create  gems.rb
       create  .gitignore
@@ -143,6 +143,10 @@ end
 ```
 
 Now this notifier will only be triggered when `Boppers.notify(:clock, *args)` is called, ignoring other boppers.
+
+### Distributing notifiers
+
+The idea is pretty much the same as creating a bopper. Use the command `boppers plugin [NAME] --type notifier` to generate a file structure. Then configure the plugin accordingly. There's a a linter for notifiers: `Boppers::Testing::NotifierLinter`.
 
 ### Available notifiers
 
@@ -253,10 +257,6 @@ Boppers.configure do |config|
   )
 end
 ```
-
-### Distributing notifiers
-
-The idea is pretty much the same. Create a new plugin with `boppers plugin [NAME]` and configure it accordingly. There's also a linter for notifiers: `Boppers::Testing::NotifierLinter`.
 
 ## Deploying to Heroku
 
