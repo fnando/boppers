@@ -13,12 +13,12 @@ module Boppers
         @subscribe = subscribe
       end
 
-      def call(_subject, message, _options)
+      def call(title, message, _options)
         bot = TelegramBot.new(token: api_token)
 
         notification = TelegramBot::OutMessage.new
         notification.chat = TelegramBot::Channel.new(id: channel_id)
-        notification.text = message
+        notification.text = "#{title}\n\n#{message}"
         notification.send_with(bot)
       end
     end
