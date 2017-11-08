@@ -237,6 +237,8 @@ Boppers.configure do |config|
 end
 ```
 
+You can run `boppers setup telegram`, which will basically guide like those steps above. No tokens will be saved locally or remotely in any form.
+
 #### Twitter
 
 1. Create an user for your bot.

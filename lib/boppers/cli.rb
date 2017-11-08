@@ -63,5 +63,20 @@ module Boppers
       generator.destination_root = base_path
       generator.invoke_all
     end
+
+    desc "setup NAME", "Discover how to set up notifiers."
+
+    def setup(name)
+      file = File.expand_path("../../setup/#{name}.rb", __dir__)
+
+      unless File.file?(file)
+        message = "ERROR: invalid setup name."
+        shell.error shell.set_color(message, :red)
+        exit 1
+      end
+
+      require file
+      Setup.call(shell)
+    end
   end
 end
