@@ -12,10 +12,10 @@ module Boppers
       end
 
       def copy_files
-        copy_file "gems.rb"
+        copy_file "Gemfile"
         copy_file "Procfile"
         copy_file "config/boppers.rb"
-        copy_file ".gitgnore"
+        copy_file ".gitignore"
         copy_file ".env"
       end
 
