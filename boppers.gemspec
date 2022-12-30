@@ -12,6 +12,8 @@ Gem::Specification.new do |spec|
   spec.description   = spec.summary
   spec.homepage      = "https://rubygems.org/gems/boppers"
   spec.license       = "MIT"
+  spec.required_ruby_version = ">= 3.0.0"
+  spec.metadata = {"rubygems_mfa_required" => "true"}
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
