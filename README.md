@@ -34,7 +34,7 @@ a lambda.
 ```ruby
 Boppers.configure do |config|
   config.boppers << lambda do
-    Boppers.notify(name: :clock, title: "Clock", message: "Now is #{Time.now}")
+    Boppers.notify(:clock, title: "Clock", message: "Now is #{Time.now}")
   end
 end
 ```
@@ -46,7 +46,7 @@ example changes the interval to `15 seconds`.
 ```ruby
 class Clock
   def call
-    Boppers.notify(name: :clock, title: "Clock", message: "Now is #{Time.now}")
+    Boppers.notify(:clock, title: "Clock", message: "Now is #{Time.now}")
   end
 
   def interval
@@ -59,9 +59,9 @@ Boppers.configure do |config|
 end
 ```
 
-The `Boppers.notify` method expects a event name (the recommended value is the
-bot's name), a title, message and a hash of options (it's up to the notifier to
-use the options).
+The `Boppers.notify(event_name, title: message: options: {})` method expects a
+event name (the recommended value is the bot's name), a title, message and a
+hash of options (it's up to the notifier to use the options).
 
 ### Distributing boppers
 
@@ -91,7 +91,7 @@ module Boppers
   class Clock
     def call
       Boppers.notify(
-        name: :clock,
+        :clock,
         title: "Clock",
         message: "Now is #{Time.now}"
       )
@@ -157,8 +157,8 @@ Boppers.configure do |config|
 end
 ```
 
-Now this notifier will only be triggered when
-`Boppers.notify(name: :clock, **kargs)` is called, ignoring other boppers.
+Now this notifier will only be triggered when `Boppers.notify(:clock, **kargs)`
+is called, ignoring other boppers.
 
 ### Distributing notifiers
 

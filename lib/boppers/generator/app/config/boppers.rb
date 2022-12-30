@@ -52,7 +52,7 @@ Boppers.configure do |config|
   config.boppers << lambda do
     $stdout.sync = true
     Boppers.notify(
-      name: :time,
+      :time,
       title: "Current time",
       message: "Now is #{Time.now}"
     )
@@ -74,7 +74,7 @@ Boppers.configure do |config|
   #   def call
   #     @count += 1
   #     Boppers.notify(
-  #       name: :counter,
+  #       :counter,
   #       title: "Counter",
   #       message: "[#{Time.now}] Current count is #{@count}"
   #     )

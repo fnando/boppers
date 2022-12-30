@@ -21,7 +21,7 @@ module Boppers
   # Send notification.
   # The `name` identifies the message type, which is used to
   # filter out the notifications and their subscribers.
-  def self.notify(name:, title:, message:, options: {})
+  def self.notify(name, title:, message:, options: {})
     configuration
       .notifiers
       .select {|notifier| subscribed?(notifier, name) }

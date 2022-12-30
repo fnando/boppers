@@ -50,30 +50,28 @@ module Boppers
         end
       end
 
-      private
-
-      def bopper?
+      private def bopper?
         plugin_type == "bopper"
       end
 
-      def plugin_name
+      private def plugin_name
         File.basename(destination_root)
       end
 
-      def name
+      private def name
         plugin_name
           .gsub(/^boppers-/, "")
           .gsub(/-notifier$/, "")
       end
 
-      def plugin_namespace
+      private def plugin_namespace
         name
           .tr("-", "_")
-          .gsub(/_(.)/) { $1.upcase }
-          .gsub(/^(.)/) { $1.upcase }
+          .gsub(/_(.)/) { ::Regexp.last_match(1).upcase }
+          .gsub(/^(.)/) { ::Regexp.last_match(1).upcase }
       end
 
-      def plugin_dir
+      private def plugin_dir
         "notifier/" unless bopper?
       end
     end

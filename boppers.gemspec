@@ -15,22 +15,22 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = ">= 3.0.0"
   spec.metadata = {"rubygems_mfa_required" => "true"}
 
-  spec.files         = `git ls-files -z`.split("\x0").reject do |f|
+  spec.files = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
   end
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) {|f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "thor"
   spec.add_dependency "aitch"
+  spec.add_dependency "thor"
 
   spec.add_development_dependency "bundler"
-  spec.add_development_dependency "rake"
-  spec.add_development_dependency "minitest-utils"
-  spec.add_development_dependency "simplecov"
-  spec.add_development_dependency "pry-meta"
   spec.add_development_dependency "mail"
+  spec.add_development_dependency "minitest-utils"
+  spec.add_development_dependency "pry-meta"
+  spec.add_development_dependency "rake"
+  spec.add_development_dependency "simplecov"
   spec.add_development_dependency "telegram_bot"
   spec.add_development_dependency "twitter"
 end

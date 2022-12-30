@@ -26,8 +26,7 @@ module Setup
 
     payload = response
               .data["result"]
-              .sort_by {|result| result["update_id"] }
-              .last
+              .max_by {|result| result["update_id"] }
 
     unless payload
       message = "ERROR: No messages found."

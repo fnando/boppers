@@ -21,7 +21,7 @@ module Boppers
     end
 
     desc "version", "Prints the Boppers version information"
-    map %w{-v --version} => :version
+    map %w[-v --version] => :version
 
     def version
       say "Boppers v#{VERSION}"
@@ -36,7 +36,7 @@ module Boppers
     def plugin(name)
       require "boppers/generator/plugin"
 
-      unless %w{bopper notifier}.include?(options[:type])
+      unless %w[bopper notifier].include?(options[:type])
         message = "ERROR: --type needs to be either 'bopper' or 'notifier'"
         shell.error shell.set_color(message, :red)
         exit 1
