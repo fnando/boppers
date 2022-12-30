@@ -1,4 +1,4 @@
-![Boppers](https://github.com/fnando/boppers/raw/master/images/logo.png)
+![Boppers](https://github.com/fnando/boppers/raw/main/images/logo.png)
 
 [![Gem](https://img.shields.io/gem/v/boppers.svg)](https://rubygems.org/gems/boppers)
 [![Gem](https://img.shields.io/gem/dt/boppers.svg)](https://rubygems.org/gems/boppers)
@@ -319,7 +319,7 @@ Make a commit and deploy to your Heroku account.
 ```
 git add .
 git commit -m "Initial commit"
-git push heroku master
+git push heroku main
 ```
 
 Scale up the boppers worker:
@@ -362,4 +362,4 @@ The gem is available as open source under the terms of the
 
 Everyone interacting in the Boppers project’s codebases, issue trackers, chat
 rooms and mailing lists is expected to follow the
-[code of conduct](https://github.com/fnando/boppers/blob/master/CODE_OF_CONDUCT.md).
+[code of conduct](https://github.com/fnando/boppers/blob/main/CODE_OF_CONDUCT.md).
