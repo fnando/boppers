@@ -3,10 +3,21 @@
 module Boppers
   module Notifier
     class Twitter
-      attr_reader :consumer_key, :consumer_secret,
-                  :access_token, :access_secret, :user, :subscribe
+      attr_reader :consumer_key,
+                  :consumer_secret,
+                  :access_token,
+                  :access_secret,
+                  :user,
+                  :subscribe
 
-      def initialize(consumer_key:, consumer_secret:, access_token:, access_secret:, user:, subscribe: nil)
+      def initialize(
+        consumer_key:,
+        consumer_secret:,
+        access_token:,
+        access_secret:,
+        user:,
+        subscribe: nil
+      )
         require "twitter"
 
         @consumer_key = consumer_key

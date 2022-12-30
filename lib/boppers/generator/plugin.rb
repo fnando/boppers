@@ -15,10 +15,9 @@ module Boppers
 
       def copy_files
         template "#{plugin_type}/gemspec.erb", "#{plugin_name}.gemspec"
-        copy_file "gems.rb"
+        copy_file "Gemfile"
         copy_file ".gitignore"
         copy_file ".rubocop.yml"
-        copy_file ".travis.yml"
         copy_file "CODE_OF_CONDUCT.md"
         copy_file "LICENSE.txt"
         copy_file "Rakefile"

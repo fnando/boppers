@@ -8,7 +8,7 @@ Bundler.require
 # information about notifiers.
 require "boppers/notifier/stdout"
 
-Config = Env::Vars.new do
+Config = SuperConfig.new do
   # mandatory :sendgrid_username, string
   # mandatory :sendgrid_password, string
   # mandatory :sendgrid_domain, string
@@ -50,7 +50,12 @@ Boppers.configure do |config|
   # A bopper is anything that responds to #call, like a lambda.
   # The following example returns the current time.
   config.boppers << lambda do
-    Boppers.notify("Current time", "Now is #{Time.now}")
+    $stdout.sync = true
+    Boppers.notify(
+      name: :time,
+      title: "Current time",
+      message: "Now is #{Time.now}"
+    )
   end
 
   # A bopper can also configure the polling interval by defining a
@@ -68,7 +73,11 @@ Boppers.configure do |config|
   #
   #   def call
   #     @count += 1
-  #     Boppers.notify("Counter", "[#{Time.now}] Current count is #{@count}")
+  #     Boppers.notify(
+  #       name: :counter,
+  #       title: "Counter",
+  #       message: "[#{Time.now}] Current count is #{@count}"
+  #     )
   #   end
   # end
   #

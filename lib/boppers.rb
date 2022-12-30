@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-module Boppers
-  require "thor"
-  require "aitch"
+require "thor"
+require "aitch"
 
-  require "boppers/version"
-  require "boppers/cli"
-  require "boppers/configuration"
-  require "boppers/http_client"
-  require "boppers/runner"
+module Boppers
+  require_relative "boppers/version"
+  require_relative "boppers/cli"
+  require_relative "boppers/configuration"
+  require_relative "boppers/http_client"
+  require_relative "boppers/runner"
 
   def self.configure
     yield configuration
@@ -21,7 +21,7 @@ module Boppers
   # Send notification.
   # The `name` identifies the message type, which is used to
   # filter out the notifications and their subscribers.
-  def self.notify(name, title:, message:, options: {})
+  def self.notify(name:, title:, message:, options: {})
     configuration
       .notifiers
       .select {|notifier| subscribed?(notifier, name) }

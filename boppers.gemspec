@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.name          = "boppers"
   spec.version       = Boppers::VERSION
   spec.authors       = ["Nando Vieira"]
-  spec.email         = ["fnando.vieira@gmail.com"]
+  spec.email         = ["me@fnando.com"]
 
   spec.summary       = "A simple bot framework for individuals."
   spec.description   = spec.summary

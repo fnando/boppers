@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 gem "boppers"
-gem "env_vars"
+gem "superconfig"
 
 # Search for plugins:
 # https://rubygems.org/search?query=boppers
